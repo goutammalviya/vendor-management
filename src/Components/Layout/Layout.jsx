@@ -10,7 +10,7 @@ const UnknownURL = () => {
 };
 const Layout = () => {
   return (
-    <div style={{height: "100vh"}}>
+    <div style={{height:"100vh"}}>
       <Routes>
         <Route path="/" element={<VendorForm />} />
         

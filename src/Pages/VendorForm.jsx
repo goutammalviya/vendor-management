@@ -6,146 +6,230 @@ import TextError from "./../Components/Formik/TextError";
 
 const VendorForm = () => {
     const initialValues = {
-        name: "",
         email: "",
-        mobileNumber: "",
-        located: "",
-        onYourMind: "",
-        checkBox: false,
-      };
-      const handleSubmit = async (values) => {
-   
+        companyName: "",
+        location: "",
+        address: "",
+        contactPersonName: "",
+        contactNumber: "",
+        emailAdress: "",
+        vendorListCategory: "",
+        websiteUrl: "",
+        linkdinUrl: "",
+        uploadPhotoUrl: "",
+    };
+    const handleSubmit = async (values) => {
+
         console.log(values)
-      
-      };
-      const validationSchema = Yup.object({
-        name: Yup.string().required("Required*"),
-        email: Yup.string().email("Invalid Mail").required("Required*"),
-        located: Yup.string().required("Required*"),
-        mobileNumber: Yup.number().required("Required*").min(11111111, "Invalid Mobile Number").max(999999999999, "Invalid Mobile Number"),
-        onYourMind: Yup.string().required("Required*"),
-        checkBox: Yup.boolean().oneOf([true], "Required*"),
-      });
-    
-  return (
-    <div className='center-xy h-100'>
-       <div className='row center-xy'>
-      <div className="col-10 col-md-7 ">
-    <div>
-    <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-        className="contact-form"
-      >
-        <Form autoComplete="off">
-          <div className="form-floating mb-3">
-            <Field
-              className="form-control border-0 border-bottom rounded-0"
-              id="floatingName"
-              placeholder="Name"
-              name="name"
-            />
-            <ErrorMessage component={TextError} name="name" />
-            <label
-              htmlFor="floatingName required"
-              className="fs-5 ff-montserrat"
-            >
-              Name <sup className="fw-semibold">*</sup>
-            </label>
-          </div>
-          <div className="form-floating mb-3">
-            <Field
-              type="text"
-              className="form-control border-0 border-bottom rounded-0"
-              id="floatingEmail"
-              name="email"
-              placeholder="Email"
-            />
-            <ErrorMessage component={TextError} name="email" />
-            <label
-              htmlFor="floatingEmail required"
-              className="fs-5 ff-montserrat"
-            >
-              Email Address <sup className="fw-semibold">*</sup>
-            </label>
-          </div>
-          <div className="form-floating mb-3">
-            <Field
-              type="number"
-              className="form-control border-0 border-bottom rounded-0"
-              id="floatingMobile"
-              placeholder="Phone number"
-              name="mobileNumber"
-            />
-            <ErrorMessage component={TextError} name="mobileNumber" />
-            <label
-              htmlFor="floatingMobile required"
-              className="fs-5 ff-montserrat"
-            >
-              Phone Number <sup className="fw-semibold">*</sup>
-            </label>
-          </div>
-          <div className="form-floating mb-3">
-            <Field
-              type="tel"
-              className="form-control border-0 border-bottom rounded-0"
-              id="floatingMobile"
-              placeholder="Location"
-              name="located"
-            />
-            <ErrorMessage component={TextError} name="located" />
-            <label
-              htmlFor="floatingMobile required"
-              className="fs-5 ff-montserrat"
-            >
-              Where are you located
-            </label>
-          </div>
-          <div className="form-floating mb-3">
-            <Field
-              type="tel"
-              className="form-control border-0 border-bottom rounded-0"
-              id="floatingMobile"
-              placeholder="Enter"
-              name="onYourMind"
-            />
-            <ErrorMessage component={TextError} name="onYourMind" />
-            <label
-              htmlFor="floatingMobile required"
-              className="fs-5 ff-montserrat"
-            >
-              What's on your mind
-            </label>
-          </div>
-          <div className="form-floating mb-3">
-            <div className="text-justify">
-              <Field type="checkbox" className="" name="checkBox"/>
-              <span className=" ff-montserrat px-2">
-                I am Okay sharing my personal information with Baelworks and I
-                have had a look at your{" "}
-                <span className="fc-blue fw-bold">“Privacy Policy”</span> to see
-                how you use it.
-              </span>
+
+    };
+    const validationSchema = Yup.object({
+        email: Yup.string().required("Required*"),
+        companyName: Yup.string().required("Required*"),
+        location: Yup.string().required("Required*"),
+        address: Yup.string().required("Required*"),
+        contactPersonName: Yup.string().required("Required*"),
+    });
+
+    return (
+        <div className='container-fluid bg-secondary h-100'>
+            <div className="text-center h1 py-4 fw-semibold">Vendors Data Form</div>
+            <div className='center-xy'>
+                <div className="container box-shadow-2 border-none card">
+                    <div>
+                        <Formik
+                            initialValues={initialValues}
+                            onSubmit={handleSubmit}
+                            validationSchema={validationSchema}
+                            className="contact-form"
+                        >
+                            <Form autoComplete="off">
+                                <div className="row p-md-5">
+                                    <div className="col-12 col-md-6">
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Email</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="email"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="email" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Company name</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="companyName"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="companyName" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Location</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="location"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="location" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Address</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="address"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="address" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Contact person name</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="contactPersonName"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="contactPersonName" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6">
+                                        <div className="row">
+                                            <div className="col-12">
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Contact number</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="contactNumber"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="contactNumber" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Email adress</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="emailAdress"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="emailAdress" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Vendor list category</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="vendorListCategory"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="vendorListCategory" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Website Url</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="websiteUrl"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="websiteUrl" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Linkdin Url</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="linkdinUrl"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="linkdinUrl" />
+                                                </div>
+
+                                                <div className="py-2">
+                                                    <label
+                                                        htmlFor=" required"
+                                                        className="fs-5 ff-montserrat"
+                                                    >Upload photo</label>
+                                                    <Field
+                                                        className="form-control border-0 border-bottom rounded-0"
+                                                        id=""
+                                                        placeholder="Name"
+                                                        name="uploadPhotoUrl"
+                                                        type="file"
+                                                    />
+                                                    <ErrorMessage component={TextError} name="uploadPhotoUrl" />
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="button text-center py-3">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-lg btn-primary rounded-0 fw-normal ff-montserrat px-5 py-2"
+                                    >
+                                        Submit
+                                    </button>
+                                </div>
+                            </Form>
+                        </Formik>
+                    </div>
+                </div>
             </div>
-          </div>
-          <ErrorMessage component={TextError} name="checkBox" />
-        
-          <div className="button text-center py-3">
-            <button
-              type="submit"
-              className="btn btn-lg btn-secondary rounded-0 fw-normal ff-montserrat px-5 py-2"
-            >
-             
-            </button>
-          </div>
-        </Form>
-      </Formik>
-    </div>
-      </div>
-       </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default VendorForm
@@ -155,4 +239,3 @@ export default VendorForm
 
 
 
- 
