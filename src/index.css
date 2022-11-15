@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --primary: #800080;
+  --secondary: #d9614d;
+  --light-purple: #8000800f;
+  --light-orange: #faeeec;
+  --off-white: #fefaf9;
+  --eerie-black: #141414;
+  --light-grey: #f9f9f9;
+  --grey: #efefef;
+  --white: #ffffff;
+  --blue: #1650d3;
+  --black: #000000;
+}
+.center-xy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center-x{
+  display: flex;
+  align-items: center;
+}
+.center-y{
+  display: flex;
+  justify-content: center;
+}
