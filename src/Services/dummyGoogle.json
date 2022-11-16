@@ -1,0 +1,19 @@
+
+
+{
+  "API_KEY": "AIzaSyCK3cSZJcibQOgy2uB9ElIc8-4yv3VPyJg",
+  "CLIENT_ID": "266923791550-coaluraftqh0bb6tf2smqg1gulja1fnj.apps.googleusercontent.com",
+  "SCOPES": "https://www.googleapis.com/auth/drive.file",
+  "DISCOVERY_DOCS": [
+    "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"
+  ]
+}
+{
+  "API_KEY": "AIzaSyBRAjxAt7mfx8Itik6E9Y7dYVQO3bIgGCs",
+  "CLIENT_ID": "825879898894-phlvmm6agv6v399dqn5iqe9m69r7qmfp.apps.googleusercontent.com",
+  "APP_ID": "825879898894",
+  "SCOPES": "https://www.googleapis.com/auth/drive.file",
+  "DISCOVERY_DOCS": [
+    "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"
+  ]
+}
