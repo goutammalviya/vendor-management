@@ -19,9 +19,7 @@ const VendorForm = () => {
         uploadPhotoUrl: "",
     };
     const handleSubmit = async (values) => {
-
         console.log(values)
-
     };
     const validationSchema = Yup.object({
         email: Yup.string().required("Required*"),
@@ -29,6 +27,12 @@ const VendorForm = () => {
         location: Yup.string().required("Required*"),
         address: Yup.string().required("Required*"),
         contactPersonName: Yup.string().required("Required*"),
+        contactNumber: Yup.string().required("Required*"),
+        emailAdress: Yup.string().required("Required*"),
+        vendorListCategory: Yup.string().required("Required*"),
+        websiteUrl: Yup.string().required("Required*"),
+        linkdinUrl: Yup.string().required("Required*"),
+        uploadPhotoUrl: Yup.string().required("Required*"),
     });
 
     return (
