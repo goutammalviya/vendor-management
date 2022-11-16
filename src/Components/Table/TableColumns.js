@@ -1,11 +1,11 @@
-export const VendorsColumns = () => [
+export const VendorsColumns = [
     {
-        Header: 'goutam',
-        accessor: '1'
+        header: 'Name',
+        accessor: 'name'
     },
     {
         Header: 'kuldeep',
-        accessor: '2'
+        accessor: 'ok'
     },
 ]
 
