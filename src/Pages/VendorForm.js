@@ -5,8 +5,10 @@ import TextError from "../Components/Formik/TextError";
 import sheetService, { getSheetRows, addRow } from "../Services/SheetService2";
 import { useNavigate } from "react-router-dom";
 import useDrive from "../Services/driveService";
+import { usePostVendorFormMutation } from "../Services/dataServices";
 
 const VendorForm = () => {
+  const [postVendorForm , {isLoading}] = usePostVendorFormMutation()
   let sheet = null;
   const {UploadFiles} = useDrive();
   const fileRef = useRef();
@@ -59,6 +61,12 @@ const VendorForm = () => {
       console.log(await addRow(sheet, data));
     });
    
+    try {
+      const response = await postVendorForm("").unwrap();
+    } catch (error) {
+      console.log(error);
+    }
+
     // navigate("/vendors");
   };
   const validationSchema = Yup.object({

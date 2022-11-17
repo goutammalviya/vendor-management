@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useGoogle from "../Services/useGoogle";
 
-export default function userDriveService() {
+export default function useDriveService() {
   const { token, authorize, revoke } = useGoogle();
   const [files, setFiles] = useState([]);
   const [processed, setProcessed] = useState([]);
