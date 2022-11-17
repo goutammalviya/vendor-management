@@ -1,6 +1,6 @@
 export const VendorsColumns = [
     {
-        header: 'address',
+        Header: 'address',
         accessor: 'address'
     },
     {
