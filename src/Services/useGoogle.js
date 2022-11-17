@@ -18,7 +18,8 @@ function useGoogle() {
           apiKey: GOOGLE.API_KEY,
           clientId: GOOGLE.CLIENT_ID,
           discoveryDocs: GOOGLE.DISCOVERY_DOCS,
-          scope: GOOGLE.SCOPES
+          scope: GOOGLE.SCOPES,
+          plugin_name: 'put anything here',
         });
         if (mounted.current) {
           const instance = window.gapi.auth2.getAuthInstance();
