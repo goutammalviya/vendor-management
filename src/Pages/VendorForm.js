@@ -84,7 +84,7 @@ const VendorForm = () => {
   });
 
   return (
-    <div className="container-fluid bg-secondary h-100">
+    <div className="container-fluid h-100">
       <div className="text-center h1 py-4 fw-semibold">Vendors Data Form</div>
       <div className="center-xy">
         <div className="container box-shadow-2 border-none card">

@@ -79,11 +79,11 @@ const BasicTable = ({
             {headerGroups.map((headerGroup) => {
               return (
                 <>
-                  <tr {...headerGroup.getHeaderGroupProps()}>
+                  <tr style={{borderRadius: "10px !important"}} {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((column) => (
                       <>
                         {headingCenter.includes(column.Header) ? (
-                          <th className=' text-center table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important"}} className=' text-center table-heading' {...column.getHeaderProps()}>
 
                             {(column.id !== "selection") ?
                               column.render('Header') :
@@ -94,7 +94,7 @@ const BasicTable = ({
                             }
                           </th>
                         ) : (
-                          <th className='table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important"}} className='table-heading' {...column.getHeaderProps()}>
                             {(column.id !== "selection") ?
                               (
                                 <>
@@ -118,7 +118,7 @@ const BasicTable = ({
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()} className='table_data_common'>
+                <tr style={{borderRadius: "0px"}} {...row.getRowProps()} className='table_data_common'>
                   {row.cells.map((cell) => {
                     return (
                       <>

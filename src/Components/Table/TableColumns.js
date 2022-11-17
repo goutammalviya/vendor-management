@@ -1,3 +1,4 @@
+import React from "react";
 export const VendorsColumns = [
     {
         Header: 'address',
@@ -42,6 +43,26 @@ export const VendorsColumns = [
     {
         Header: 'website url',
         accessor: 'website url'
+    },
+    {
+        Header: 'CRUD',
+        accessor: 'CRUD',
+        Cell: ({ row: { original } }) => {
+            console.log(original);
+			return (
+				<>
+					<span className='' onClick={()=>original.delete()}>
+						delete
+					</span>
+					<span className='px-1'>
+						000
+					</span>
+					<span className=''>
+						000
+					</span>
+				</>
+			)
+		}
     },
 ]
 

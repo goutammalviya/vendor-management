@@ -20,6 +20,19 @@ const VendorTable = () => {
     };
     asyncFn();
   }, []);
+
+  useEffect(() => {
+    setLoading(true)
+    const asyncFn = async () => {
+      const sheets = await sheetService("vendors");
+      sheet = sheets;
+      let data = await getSheetRows(sheet);
+      setVendors(data);
+      setLoading(false)
+    };
+    asyncFn();
+  }, [columns , ]);
+  
   console.log(vendors);
   if(loading){
     return (
@@ -28,13 +41,16 @@ const VendorTable = () => {
   }
   return (
     <div>
+      <div className="text-center"><div className="h2 pt-3">Vendors List</div></div>
+    <div className="card border-0 p-2 m-2 m-md-4 box-shadow">
       <BasicTable
       headingCenter = {[]}
       itemsCenter = {[]}
         data={vendors}
         columns={columns}
-      />
+        />
     </div>
+        </div>
   );
 };
 

@@ -39,10 +39,10 @@ input[type='radio'] {
 }
 
 .table_data_common {
-	background: rgba(255, 255, 255, 1);
+	background: rgba(235, 235, 235, 0.523);
 	backdrop-filter: blur(0px);
+	border-radius: 0px;
 	-webkit-backdrop-filter: blur(0px);
-	border-radius: 10px;
 	outline: none;
 }
 
@@ -65,9 +65,13 @@ input[type='radio'] {
 
 .table thead th {
 	vertical-align: middle !important;
+	background-color: #FAF4D5 !important;
+	
 	/* border-bottom: 2px solid #dee2e6; */
 }
-
+.table>thead{
+	border-radius: 6px !important;
+}
 .myTable td {
 	padding: 16px;
 	color: black;
