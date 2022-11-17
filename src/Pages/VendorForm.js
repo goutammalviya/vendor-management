@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import TextError from "../Components/Formik/TextError";
 import sheetService, { getSheetRows, addRow } from "../Services/SheetService2";
 import { useNavigate } from "react-router-dom";
+import useDrive from "../Services/driveService";
 
 const VendorForm = () => {
   let sheet = null;
+  const {UploadFiles} = useDrive();
+  const fileRef = useRef();
   const navigate = useNavigate();
   useEffect(() => {
     const asyncFn = async () => {
@@ -30,8 +33,10 @@ const VendorForm = () => {
     uploadPhotoUrl: "",
   };
   const handleSubmit = async values => {
-    console.log(values);
-    const data = {
+    const files = fileRef.current.files;
+    let fileArr = Object.keys(files).map(f=>files[f]);
+  const fileDriveRes =  await UploadFiles(fileArr);
+   let data = {
       email: values.email,
       "company name": values.companyName,
       location: values.location,
@@ -43,9 +48,18 @@ const VendorForm = () => {
       "website url": values.websiteUrl,
       "linkedIn url": values.linkdinUrl,
       "profile url": values.uploadPhotoUrl,
+      "profile name": values.uploadPhotoUrl,
     };
-    console.log(await addRow(sheet, data));
-    navigate("/vendors");
+    console.log(fileDriveRes);
+    fileDriveRes.forEach(async (r) => {
+        
+      data["profile url"] = r.url;
+      data["profile name"] = r.name;
+      console.log(data);
+      console.log(await addRow(sheet, data));
+    });
+   
+    // navigate("/vendors");
   };
   const validationSchema = Yup.object({
     email: Yup.string().required("Required*"),
@@ -263,6 +277,8 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
+                            innerRef={fileRef}
+                            multiple
                             placeholder="Name"
                             name="uploadPhotoUrl"
                             type="file"

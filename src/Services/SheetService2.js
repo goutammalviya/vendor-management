@@ -10,6 +10,10 @@ const getSheetRows = async (sheet) => {
   return await sheet.getRows();
 };
 const addRow = async (sheet,data) => {
+  if(sheet === null){
+    console.log("sheets is null");
+    sheet = await sheetService("vendors")
+  }
   return await sheet.addRow(data)
 };
 
