@@ -3,6 +3,7 @@ import BasicTable from "./../Components/Table/CommonTable";
 import { VendorsColumns } from "../Components/Table/TableColumns";
 import { useNavigate } from "react-router-dom";
 import sheetService, { getSheetRows } from "../Services/SheetService2";
+import { AiOutlineDelete , AiOutlineEdit , AiOutlineFolderView} from "react-icons/ai";
 const VendorTable = () => {
   
   const [loading , setLoading] = useState(false)
@@ -81,17 +82,18 @@ const deleteRow = async row =>{
         Cell: ({ row: { original } }) => {
             console.log(original);
 			return (
-				<>
-					<span className='' onClick={()=>deleteRow(original)}>
-						delete
+				<div className="d-flex">
+					<span className='center-xy' onClick={()=>deleteRow(original)}>
+						<div className="br-50 bg-light-red d-flex p-2 cursor-pointer"><AiOutlineDelete/></div>
 					</span>
-					<span className='px-1'>
-						000
+					<span className='center-xy px-1' onClick={()=>deleteRow(original)}>
+						<div className="br-50 bg-light-green d-flex p-2 cursor-pointer"><AiOutlineEdit/></div>
 					</span>
-					<span className=''>
-						000
+					<span className='center-xy' onClick={()=>deleteRow(original)}>
+						<div className="br-50 bg-light-green d-flex p-2 cursor-pointer"><AiOutlineFolderView/></div>
 					</span>
-				</>
+			
+				</div>
 			)
 		}
     },

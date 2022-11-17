@@ -50,3 +50,24 @@ code {
 .border-none{
   border: 0px !important
 }
+.br-50{
+  border-radius: 50%;
+}
+.bg-light-grey {
+	background-color: #f6f6f6 !important;
+}
+
+.bg-light-green {
+	background-color: #eef2e7 !important;
+}
+
+.bg-light-blue {
+	background-color: #c2d7ec;
+}
+
+.bg-light-red {
+	background-color: #fee9e9;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
