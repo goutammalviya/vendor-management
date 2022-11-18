@@ -6,7 +6,7 @@ const Loader = (isLoading) => {
                 position: 'fixed',
                 minHeight: '100%',
                 minWidth: '100%',
-                zIndex: "100000",
+                zIndex: "50000000",
                 backgroundColor:  '#00000014'
                                 // opacity: '0.5'
             }}>
