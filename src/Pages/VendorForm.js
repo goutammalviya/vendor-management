@@ -5,6 +5,7 @@ import TextError from "../Components/Formik/TextError";
 import sheetService, { getSheetRows, addRow } from "../Services/SheetService2";
 import { useNavigate } from "react-router-dom";
 import useDrive from "../Services/driveService";
+import { v4 as uuidv4 } from 'uuid';
 import { usePostVendorFormMutation } from "../Services/dataServices";
 
 const VendorForm = () => {
@@ -39,6 +40,7 @@ const VendorForm = () => {
     let fileArr = Object.keys(files).map(f=>files[f]);
   const fileDriveRes =  await UploadFiles(fileArr);
    let data = {
+      
       email: values.email,
       "company name": values.companyName,
       location: values.location,
@@ -57,6 +59,7 @@ const VendorForm = () => {
         
       data["profile url"] = r.url;
       data["profile name"] = r.name;
+      data.id = uuidv4();
       console.log(data);
       console.log(await addRow(sheet, data));
     });
