@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import Navbar from "../../Pages/Navbar";
 import SuggestedVendorTable from "../../Pages/SuggestedVendorTable";
 import VendorForm from '../../Pages/VendorForm';
 import VendorTable from './../../Pages/VendorTable';
@@ -12,7 +13,8 @@ const UnknownURL = () => {
 };
 const Layout = () => {
   return (
-    <div style={{height:"100vh"}}>
+    <div style={{height:"100vh"}} >
+      <Navbar/>
       <Routes>
         <Route path="/vendor" element={<VendorTable />} />
         <Route path="/suggested_vendors" element={<SuggestedVendorTable />} />
