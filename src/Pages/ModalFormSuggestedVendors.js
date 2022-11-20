@@ -1,15 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-import { addRow, getSheetRows } from "../Services/SheetService2";
-// import modal_cross from '../../../assets/Images/modal-cross.svg';
-// import { Oval } from 'react-loader-spinner';
+import React, { useEffect, useState } from "react";
 import "./Modal.css";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import TextError from "../Components/Formik/TextError";
-import sheetService from "../Services/SheetService2";
-
+import sheetService, { getSheetRows} from "../Services/SheetService2";
 const ModalForm = props => {
   const { modalId, data, orgData, setRenderModal, reFetchData } = props;
+  const [projectList, setProjectList] = useState([]);
+
+  useEffect(() => {
+    const asyncFn = async () => {
+      const sheets = await sheetService("projects");
+      const projectListres  = await getSheetRows(sheets);
+      console.log(projectListres);
+      setProjectList(projectListres);
+    };
+    asyncFn();
+  }, []);
+
+
+
   const initialValues = {
     email: data.email,
     companyName: data["company name"],
@@ -21,20 +31,18 @@ const ModalForm = props => {
     vendorListCategory: data["vendor list category"],
     websiteUrl: data["website url"],
     linkdinUrl: data["linkedIn url"],
-    projectName: data["project Name"],
+    projectName: data["project name"],
+    addAnotherProject: "",
     checkBox: data["suggested"] === "suggested" ? true : false,
   };
   const handleSubmit = async values => {
     // navigate("/vendors");
 
     console.log(data, "row");
-    let orgRow = orgData.filter(r => r.suggested === "suggested" && r.id === data.id)[0];
+    let orgRow = orgData.filter(
+      r => r.suggested === "suggested" && r.id === data.id
+    )[0];
     console.log(orgRow, "orgRow");
-///load cell
-const sheets = await sheetService("suggestedVendors");
-await sheets.loadCells()
-const cell =  sheets.getCellByA1(`O${data._rowNumber}`);
-// ... 
     orgRow.email = values.email;
     orgRow["company name"] = values.companyName;
     orgRow.location = values.location;
@@ -45,14 +53,16 @@ const cell =  sheets.getCellByA1(`O${data._rowNumber}`);
     orgRow["vendor list category"] = values.vendorListCategory;
     orgRow["website url"] = values.websiteUrl;
     orgRow["linkedIn url"] = values.linkdinUrl;
+    orgRow["project name"] = values.projectName;
+    if (values.addAnotherProject !== "") {
+      orgRow["project name"] =
+        values.projectName + "," + values.addAnotherProject;
+    }
     if (values.checkBox === true) {
       orgRow["suggested"] = "suggested";
-      cell.value = values.projectName;
     } else {
       orgRow["suggested"] = "";
-      cell.value = "";
     }
-    sheets.saveUpdatedCells();
     await orgRow.save();
     await reFetchData(false);
     document.getElementById("closeModal").click();
@@ -195,6 +205,24 @@ const cell =  sheets.getCellByA1(`O${data._rowNumber}`);
                               name="contactPersonName"
                             />
                           </div>
+                          <div className="py-2">
+                            <label
+                              htmlFor=" required"
+                              className="fs-5 ff-montserrat">
+                              project names
+                            </label>
+                            <Field
+                              disabled
+                              className="form-control border-0 border-bottom rounded-0"
+                              id=""
+                              placeholder="Enter"
+                              name="projectName"
+                            />
+                            <ErrorMessage
+                              component={TextError}
+                              name="projectName"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -290,21 +318,26 @@ const cell =  sheets.getCellByA1(`O${data._rowNumber}`);
                               name="linkdinUrl"
                             />
                           </div>
+
                           <div className="py-2">
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              project name
+                              add another project
                             </label>
                             <Field
+                              as="select"
                               className="form-control border-0 border-bottom rounded-0"
                               id=""
                               placeholder="Enter"
-                              name="projectName"
-                            />
+                              name="addAnotherProject">
+                              {" "}
+                              <option value="">select project name</option>
+                              {projectList.map((project) => {let projectName = project["project name"]; return(<option value={projectName}>{projectName}</option>)})}
+                            </Field>
                             <ErrorMessage
                               component={TextError}
-                              name="projectName"
+                              name="addAnotherProject"
                             />
                           </div>
 

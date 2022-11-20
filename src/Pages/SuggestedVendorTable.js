@@ -108,11 +108,6 @@ const SuggestedVendorTable = () => {
       Cell: ({ row: { original } }) => {
         return (
           <div className="d-flex">
-            <span className="center-xy" onClick={() =>deleteRow(original)}>
-              <div className="br-50 bg-light-red d-flex p-2 cursor-pointer">
-                <AiOutlineDelete />
-              </div>
-            </span>
             <span className="center-xy px-1">
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
                 <AiOutlineEdit  onClick={()=>{ setRow(original); setRenderModal(true); setTimeout(() => {

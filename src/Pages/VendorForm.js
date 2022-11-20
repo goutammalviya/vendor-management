@@ -14,14 +14,7 @@ const VendorForm = () => {
   const {UploadFiles} = useDrive();
   const fileRef = useRef();
   const navigate = useNavigate();
-  useEffect(() => {
-    const asyncFn = async () => {
-      const sheets = await sheetService("vendors");
-      sheet = sheets;
-      console.log(await getSheetRows(sheet));
-    };
-    asyncFn();
-  }, []);
+
   const initialValues = {
     email: "",
     companyName: "",
