@@ -40,7 +40,6 @@ const VendorForm = () => {
       address: values.address,
       "contact person name": values.contactPersonName,
       "contact no": values.contactNumber,
-      "email address": values.emailAdress,
       "vendor list category": values.vendorListCategory,
       "website url": values.websiteUrl,
       "linkedIn url": values.linkdinUrl,
@@ -72,7 +71,6 @@ const VendorForm = () => {
     address: Yup.string().required("Required*"),
     contactPersonName: Yup.string().required("Required*"),
     contactNumber: Yup.string().required("Required*"),
-    emailAdress: Yup.string().required("Required*"),
     vendorListCategory: Yup.string().required("Required*"),
     websiteUrl: Yup.string().required("Required*"),
     linkdinUrl: Yup.string().required("Required*"),
@@ -199,25 +197,6 @@ const VendorForm = () => {
                             name="contactNumber"
                           />
                         </div>
-
-                        <div className="py-2">
-                          <label
-                            htmlFor=" required"
-                            className="fs-5 ff-montserrat">
-                            Email adress
-                          </label>
-                          <Field
-                            className="form-control border-0 border-bottom rounded-0"
-                            id=""
-                            placeholder="Name"
-                            name="emailAdress"
-                          />
-                          <ErrorMessage
-                            component={TextError}
-                            name="emailAdress"
-                          />
-                        </div>
-
                         <div className="py-2">
                           <label
                             htmlFor=" required"

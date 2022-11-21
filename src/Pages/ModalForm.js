@@ -16,7 +16,6 @@ const ModalForm = (props) => {
     address: data["address"],
     contactPersonName: data["contact person name"],
     contactNumber: data["contact no"],
-    emailAdress: data["email address"],
     vendorListCategory: data["vendor list category"],
     websiteUrl: data["website url"],
     linkdinUrl: data["linkedIn url"],
@@ -30,7 +29,6 @@ const ModalForm = (props) => {
     data["address"] = values.address;
     data["contact person name"] = values.contactPersonName;
     data["contact no"] = values.contactNumber;
-    data["email address"] = values.emailAdress;
     data["vendor list category"] = values.vendorListCategory;
     data["website url"] = values.websiteUrl;
     data["linkedIn url"] = values.linkdinUrl;
@@ -54,7 +52,6 @@ const ModalForm = (props) => {
     address: Yup.string().required("Required*"),
     contactPersonName: Yup.string().required("Required*"),
     contactNumber: Yup.string().required("Required*"),
-    emailAdress: Yup.string().required("Required*"),
     vendorListCategory: Yup.string().required("Required*"),
     websiteUrl: Yup.string().required("Required*"),
     linkdinUrl: Yup.string().required("Required*"),
@@ -217,26 +214,6 @@ const ModalForm = (props) => {
                               name="contactNumber"
                             />
                           </div>
-
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat"
-                            >
-                              Email adress
-                            </label>
-                            <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="emailAdress"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="emailAdress"
-                            />
-                          </div>
-
                           <div className="py-2">
                             <label
                               htmlFor=" required"

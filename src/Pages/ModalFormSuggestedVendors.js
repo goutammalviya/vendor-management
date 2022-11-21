@@ -27,7 +27,6 @@ const ModalForm = props => {
     address: data["address"],
     contactPersonName: data["contact person name"],
     contactNumber: data["contact no"],
-    emailAdress: data["email address"],
     vendorListCategory: data["vendor list category"],
     websiteUrl: data["website url"],
     linkdinUrl: data["linkedIn url"],
@@ -49,14 +48,15 @@ const ModalForm = props => {
     orgRow["address"] = values.address;
     orgRow["contact person name"] = values.contactPersonName;
     orgRow["contact no"] = values.contactNumber;
-    orgRow["email address"] = values.emailAdress;
     orgRow["vendor list category"] = values.vendorListCategory;
     orgRow["website url"] = values.websiteUrl;
     orgRow["linkedIn url"] = values.linkdinUrl;
     orgRow["project name"] = values.projectName;
     if (values.addAnotherProject !== "") {
-      orgRow["project name"] =
-        values.projectName + "," + values.addAnotherProject;
+      if(values.projectName)
+      orgRow["project name"] = values.projectName + "," + values.addAnotherProject;
+      else
+      orgRow["project name"] = values.addAnotherProject;
     }
     if (values.checkBox === true) {
       orgRow["suggested"] = "suggested";
@@ -75,7 +75,6 @@ const ModalForm = props => {
     address: Yup.string().required("Required*"),
     contactPersonName: Yup.string().required("Required*"),
     contactNumber: Yup.string().required("Required*"),
-    emailAdress: Yup.string().required("Required*"),
     vendorListCategory: Yup.string().required("Required*"),
     websiteUrl: Yup.string().required("Required*"),
     linkdinUrl: Yup.string().required("Required*"),
@@ -247,23 +246,7 @@ const ModalForm = props => {
                             />
                           </div>
 
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat">
-                              Email adress
-                            </label>
-                            <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="emailAdress"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="emailAdress"
-                            />
-                          </div>
+                        
 
                           <div className="py-2">
                             <label

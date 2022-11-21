@@ -72,10 +72,6 @@ const VendorTable = () => {
       accessor: "email"
     },
     {
-      Header: "email address",
-      accessor: "email address"
-    },
-    {
       Header: "linkedIn url",
       accessor: "linkedIn url"
     },
