@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef ,useState} from "react";
 import * as Yup from "yup";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import TextError from "../Components/Formik/TextError";
@@ -10,10 +10,20 @@ import { usePostVendorFormMutation } from "../Services/dataServices";
 
 const VendorForm = () => {
   const [postVendorForm , {isLoading}] = usePostVendorFormMutation()
+  
   let sheet = null;
   const {UploadFiles} = useDrive();
   const fileRef = useRef();
-  const navigate = useNavigate();
+  const [projectCategoryList, setProjectCategoryList] = useState([]);
+  useEffect(() => {
+    const asyncFn = async () => {
+      const sheets = await sheetService("projects");
+      const projectCategoryListres  = await getSheetRows(sheets);
+      console.log(projectCategoryListres);
+      setProjectCategoryList(projectCategoryListres);
+    };
+    asyncFn();
+  }, []);
 
   const initialValues = {
     email: "",
@@ -206,9 +216,15 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
+                            as='select'
                             placeholder="Name"
                             name="vendorListCategory"
-                          />
+                          
+                            >
+                              {" "}
+                              <option value="">select vendor category</option>
+                              {projectCategoryList.filter(v=>v["vendor list category"]).map((project) => {let projectName = project["vendor list category"]; return(<option value={projectName}>{projectName}</option>)})}
+                            </Field>
                           <ErrorMessage
                             component={TextError}
                             name="vendorListCategory"

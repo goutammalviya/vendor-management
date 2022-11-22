@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import {
   AiOutlineDelete,
   AiOutlineEdit,
-  AiOutlineFolderView
+  AiOutlineFolderView,
 } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -18,13 +18,11 @@ const SuggestedVendorTable = () => {
   const [vendors, setVendors] = useState([]);
   const [orgVendors, setOrgVendors] = useState([]);
   const [row, setRow] = useState([]);
-  const navigate = useNavigate();
-  
   useEffect(() => {
     reFetchData(true);
   }, []);
 
-  const reFetchData = async (showLoader) => {
+  const reFetchData = async showLoader => {
     showLoader ? setLoading(true) : setLoading2(true);
     const sheets = await sheetService("suggestedVendors");
     const orgSheets = await sheetService("vendors");
@@ -36,7 +34,7 @@ const SuggestedVendorTable = () => {
     showLoader ? setLoading(false) : setLoading2(false);
   };
 
-  const deleteRow = async (row) => {
+  const deleteRow = async row => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -44,8 +42,8 @@ const SuggestedVendorTable = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then(async (result) => {
+      confirmButtonText: "Yes, delete it!",
+    }).then(async result => {
       if (result.isConfirmed) {
         await row.delete();
         await reFetchData(false);
@@ -55,50 +53,6 @@ const SuggestedVendorTable = () => {
   };
   const columns = useMemo(() => [
     {
-      Header: "address",
-      accessor: "address"
-    },
-    {
-      Header: "company name",
-      accessor: "company name"
-    },
-    {
-      Header: "contact no",
-      accessor: "contact no"
-    },
-    {
-      Header: "contact person name",
-      accessor: "contact person name"
-    },
-    {
-      Header: "email",
-      accessor: "email"
-    },
-    {
-      Header: "linkedIn url",
-      accessor: "linkedIn url"
-    },
-    {
-      Header: "location",
-      accessor: "location"
-    },
-    {
-      Header: "profile name",
-      accessor: "profile name"
-    },
-    {
-      Header: "vendor list category",
-      accessor: "vendor list category"
-    },
-    {
-      Header: "website url",
-      accessor: "website url"
-    },
-    {
-      Header: "projects",
-      accessor: "project name"
-    },
-    {
       Header: "CRUD",
       accessor: "CRUD",
       Cell: ({ row: { original } }) => {
@@ -106,29 +60,79 @@ const SuggestedVendorTable = () => {
           <div className="d-flex">
             <span className="center-xy px-1">
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
-                <AiOutlineEdit  onClick={()=>{ setRow(original); setRenderModal(true); setTimeout(() => {
-                  document.getElementById('modal-btn-click').click();
-                }, (100));}}
-              />
+                <AiOutlineEdit
+                  onClick={() => {
+                    setRow(original);
+                    setRenderModal(true);
+                    setTimeout(() => {
+                      document.getElementById("modal-btn-click").click();
+                    }, 100);
+                  }}
+                />
                 <button
                   type="button"
                   data-bs-toggle="modal"
-                  style={{display: "none"}}
+                  style={{ display: "none" }}
                   data-bs-target="#rowmodal"
-                  id='modal-btn-click'
-                   >
-                </button>
+                  id="modal-btn-click"></button>
               </div>
             </span>
-            <span className="center-xy" >
+            <span className="center-xy">
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
                 <AiOutlineFolderView />
               </div>
             </span>
           </div>
         );
-      }
-    }
+      },
+    },
+    {
+      Header: "projects",
+      accessor: "project name",
+    },
+    {
+      Header: "vendor list category",
+      accessor: "vendor list category",
+    },
+    {
+      Header: "company name",
+      accessor: "company name",
+    },
+    {
+      Header: "address",
+      accessor: "address",
+    },
+    {
+      Header: "location",
+      accessor: "location",
+    },
+
+    {
+      Header: "contact no",
+      accessor: "contact no",
+    },
+    {
+      Header: "contact person name",
+      accessor: "contact person name",
+    },
+    {
+      Header: "email",
+      accessor: "email",
+    },
+    {
+      Header: "linkedIn url",
+      accessor: "linkedIn url",
+    },
+
+    {
+      Header: "profile name",
+      accessor: "profile name",
+    },
+
+    {
+      Header: "website url",
+      accessor: "website url",
+    },
   ]);
   console.log(vendors);
   if (loading) {
@@ -146,8 +150,15 @@ const SuggestedVendorTable = () => {
         <div className="h2 pt-3">Vendors List</div>
       </div>
       <div className="card border-0 p-2 m-2 m-md-4 box-shadow">
-
-       {renderModal && <ModalFormSuggestedVendors setRenderModal={setRenderModal} reFetchData={reFetchData} orgData={orgVendors} data={row} modalId={`rowmodal`} /> }
+        {renderModal && (
+          <ModalFormSuggestedVendors
+            setRenderModal={setRenderModal}
+            reFetchData={reFetchData}
+            orgData={orgVendors}
+            data={row}
+            modalId={`rowmodal`}
+          />
+        )}
         <BasicTable
           headingCenter={[]}
           itemsCenter={[]}

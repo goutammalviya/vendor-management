@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { addRow, getSheetRows } from "../Services/SheetService2";
+import sheetService, { getSheetRows } from "../Services/SheetService2";
 // import modal_cross from '../../../assets/Images/modal-cross.svg';
 // import { Oval } from 'react-loader-spinner';
 import "./Modal.css";
@@ -9,6 +9,16 @@ import TextError from "../Components/Formik/TextError";
 
 const ModalForm = (props) => {
   const { modalId, data, setRenderModal, reFetchData } = props;
+  const [projectCategoryList, setProjectCategoryList] = useState([]);
+  useEffect(() => {
+    const asyncFn = async () => {
+      const sheets = await sheetService("projects");
+      const projectCategoryListres  = await getSheetRows(sheets);
+      console.log(projectCategoryListres);
+      setProjectCategoryList(projectCategoryListres);
+    };
+    asyncFn();
+  }, []);
   const initialValues = {
     email: data.email,
     companyName: data["company name"],
@@ -77,7 +87,7 @@ const ModalForm = (props) => {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">
-                Modal title
+              Update Vendor
               </h5>
               <button
                 type="button"
@@ -222,11 +232,17 @@ const ModalForm = (props) => {
                               Vendor list category
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="vendorListCategory"
-                            />
+                            className="form-control border-0 border-bottom rounded-0"
+                            id=""
+                            as='select'
+                            placeholder="Name"
+                            name="vendorListCategory"
+                          
+                            >
+                              {" "}
+                              <option value="">select vendor category</option>
+                              {projectCategoryList.filter(v=>v["vendor list category"]).map((project) => {let projectName = project["vendor list category"]; return(<option value={projectName}>{projectName}</option>)})}
+                            </Field>
                             <ErrorMessage
                               component={TextError}
                               name="vendorListCategory"
