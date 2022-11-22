@@ -84,54 +84,51 @@ const SuggestedVendorTable = () => {
             </span>
           </div>
         );
-      },
+      }
     },
     {
       Header: "projects",
-      accessor: "project name",
+      accessor: "project name"
     },
     {
       Header: "vendor list category",
-      accessor: "vendor list category",
+      accessor: "vendor list category"
     },
     {
       Header: "company name",
-      accessor: "company name",
+      accessor: "company name"
     },
     {
       Header: "address",
-      accessor: "address",
+      accessor: "address"
     },
     {
       Header: "location",
-      accessor: "location",
+      accessor: "location"
     },
-
     {
       Header: "contact no",
-      accessor: "contact no",
+      accessor: "contact no"
     },
     {
       Header: "contact person name",
-      accessor: "contact person name",
+      accessor: "contact person name"
     },
     {
       Header: "email",
-      accessor: "email",
+      accessor: "email"
     },
     {
       Header: "linkedIn url",
-      accessor: "linkedIn url",
+      accessor: "linkedIn url"
     },
-
     {
       Header: "profile name",
-      accessor: "profile name",
+      accessor: "profile name"
     },
-
     {
       Header: "website url",
-      accessor: "website url",
+      accessor: "website url"
     },
   ]);
   console.log(vendors);

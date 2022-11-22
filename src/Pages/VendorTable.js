@@ -119,12 +119,10 @@ const VendorTable = () => {
       Header: "linkedIn url",
       accessor: "linkedIn url"
     },
-   
     {
       Header: "profile name",
       accessor: "profile name"
     },
-  
     {
       Header: "website url",
       accessor: "website url"
