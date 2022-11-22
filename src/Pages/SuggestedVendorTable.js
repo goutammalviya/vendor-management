@@ -55,50 +55,6 @@ const SuggestedVendorTable = () => {
   };
   const columns = useMemo(() => [
     {
-      Header: "address",
-      accessor: "address"
-    },
-    {
-      Header: "company name",
-      accessor: "company name"
-    },
-    {
-      Header: "contact no",
-      accessor: "contact no"
-    },
-    {
-      Header: "contact person name",
-      accessor: "contact person name"
-    },
-    {
-      Header: "email",
-      accessor: "email"
-    },
-    {
-      Header: "linkedIn url",
-      accessor: "linkedIn url"
-    },
-    {
-      Header: "location",
-      accessor: "location"
-    },
-    {
-      Header: "profile name",
-      accessor: "profile name"
-    },
-    {
-      Header: "vendor list category",
-      accessor: "vendor list category"
-    },
-    {
-      Header: "website url",
-      accessor: "website url"
-    },
-    {
-      Header: "projects",
-      accessor: "project name"
-    },
-    {
       Header: "CRUD",
       accessor: "CRUD",
       Cell: ({ row: { original } }) => {
@@ -128,7 +84,51 @@ const SuggestedVendorTable = () => {
           </div>
         );
       }
-    }
+    },
+    {
+      Header: "projects",
+      accessor: "project name"
+    },
+    {
+      Header: "vendor list category",
+      accessor: "vendor list category"
+    },
+    {
+      Header: "company name",
+      accessor: "company name"
+    },
+    {
+      Header: "address",
+      accessor: "address"
+    },
+    {
+      Header: "location",
+      accessor: "location"
+    },
+    {
+      Header: "contact no",
+      accessor: "contact no"
+    },
+    {
+      Header: "contact person name",
+      accessor: "contact person name"
+    },
+    {
+      Header: "email",
+      accessor: "email"
+    },
+    {
+      Header: "linkedIn url",
+      accessor: "linkedIn url"
+    },
+    {
+      Header: "profile name",
+      accessor: "profile name"
+    },
+    {
+      Header: "website url",
+      accessor: "website url"
+    },
   ]);
   console.log(vendors);
   if (loading) {
