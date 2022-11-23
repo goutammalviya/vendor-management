@@ -10,6 +10,7 @@ import Loader from "../Components/loader/Loader";
 import BasicTable from "../Components/Table/CommonTable";
 import sheetService, { getSheetRows } from "../Services/SheetService2";
 import ModalFormSuggestedVendors from "./ModalFormSuggestedVendors";
+import { ColumnFilter } from './ColumnFilter';
 const SuggestedVendorTable = () => {
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
@@ -55,6 +56,7 @@ const SuggestedVendorTable = () => {
     {
       Header: "CRUD",
       accessor: "CRUD",
+       Filter: "",
       Cell: ({ row: { original } }) => {
         return (
           <div className="d-flex">
@@ -88,47 +90,58 @@ const SuggestedVendorTable = () => {
     },
     {
       Header: "projects",
-      accessor: "project name"
+      accessor: "project name",
+       Filter: ColumnFilter
     },
     {
       Header: "vendor list category",
-      accessor: "vendor list category"
+      accessor: "vendor list category",
+       Filter: ColumnFilter
     },
     {
       Header: "company name",
-      accessor: "company name"
+      accessor: "company name",
+       Filter: ColumnFilter
     },
     {
       Header: "address",
-      accessor: "address"
+      accessor: "address",
+       Filter: ColumnFilter
     },
     {
       Header: "location",
-      accessor: "location"
+      accessor: "location",
+       Filter: ColumnFilter
     },
     {
       Header: "contact no",
-      accessor: "contact no"
+      accessor: "contact no",
+       Filter: ColumnFilter
     },
     {
       Header: "contact person name",
-      accessor: "contact person name"
+      accessor: "contact person name",
+       Filter: ColumnFilter
     },
     {
       Header: "email",
-      accessor: "email"
+      accessor: "email",
+       Filter: ColumnFilter
     },
     {
       Header: "linkedIn url",
-      accessor: "linkedIn url"
+      accessor: "linkedIn url",
+       Filter: ColumnFilter
     },
     {
       Header: "profile name",
-      accessor: "profile name"
+      accessor: "profile name",
+       Filter: ColumnFilter
     },
     {
       Header: "website url",
-      accessor: "website url"
+      accessor: "website url",
+       Filter: ColumnFilter
     },
   ]);
   console.log(vendors);

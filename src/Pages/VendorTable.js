@@ -12,7 +12,11 @@ import Swal from "sweetalert2";
 import Loader from "../Components/loader/Loader";
 import { Modal } from "bootstrap";
 import ModalForm from "./ModalForm";
+import { ColumnFilter } from "./ColumnFilter";
 const VendorTable = () => {
+
+
+
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
   const [renderModal, setRenderModal] = useState(false);
@@ -54,6 +58,7 @@ const VendorTable = () => {
     {
       Header: "CRUD",
       accessor: "CRUD",
+      Filter: "",
       Cell: ({ row: { original } }) => {
         return (
           <div className="d-flex">
@@ -89,44 +94,64 @@ const VendorTable = () => {
     },
     {
       Header: "vendor list category",
-      accessor: "vendor list category"
+      accessor: "vendor list category",
+      Filter: ColumnFilter
     },
     {
       Header: "company name",
-      accessor: "company name"
+      accessor: "company name",
+       Filter: ColumnFilter
+
     },
     {
       Header: "address",
-      accessor: "address"
+      accessor: "address",
+       Filter: ColumnFilter
+
     },
     {
       Header: "location",
-      accessor: "location"
+      accessor: "location",
+       Filter: ColumnFilter
+
     },
     {
       Header: "contact no",
-      accessor: "contact no"
+      accessor: "contact no",
+       Filter: ColumnFilter
+
     },
     {
       Header: "contact person name",
-      accessor: "contact person name"
+      accessor: "contact person name",
+       Filter: ColumnFilter
+
     },
     {
       Header: "email",
-      accessor: "email"
+      accessor: "email",
+       Filter: ColumnFilter
+
     },
     {
       Header: "linkedIn url",
-      accessor: "linkedIn url"
+      accessor: "linkedIn url",
+       Filter: ColumnFilter
+
     },
     {
       Header: "profile name",
-      accessor: "profile name"
+      accessor: "profile name",
+       Filter: ColumnFilter
+
     },
     {
       Header: "website url",
-      accessor: "website url"
+      accessor: "website url",
+       Filter: ColumnFilter
+
     },
+    
    
   ]);
   console.log(vendors);

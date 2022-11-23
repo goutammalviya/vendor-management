@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRowSelect, useTable } from 'react-table';
+import { useRowSelect, useTable  , useFilters} from 'react-table';
 import Checkbox from './Checkbox';
 
 //importing custum components
@@ -7,6 +7,7 @@ import './Table.css'
 //importing custum components
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { ColumnFilter } from '../../Pages/ColumnFilter';
 
 const BasicTable = ({
   data,
@@ -16,6 +17,15 @@ const BasicTable = ({
   ...props
 }) => {
 
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      Filter: ColumnFilter
+    }),
+    []
+  )
+
+
   const dispatch = useDispatch()
   let location = useLocation();
   const tableInstance = useTable(
@@ -23,6 +33,7 @@ const BasicTable = ({
       columns,
       data
     },
+    useFilters,
     useRowSelect,
     (hooks) => {
       hooks.visibleColumns.push((columns) => {
@@ -84,11 +95,13 @@ const BasicTable = ({
                       <>
                         {headingCenter.includes(column.Header) ? (
                           <th  style={{borderRadius: "10px !important"}} className=' text-center table-heading' {...column.getHeaderProps()}>
-
+                           
+                         
                             {(column.id !== "selection") ?
                               column.render('Header') :
                               <span className="p-5">
                                 {column.render('Header')}
+                                <div>{column.canFilter ? column.render('Filter') : null}</div>
                                 {/* <img src={sort} className="ml-2" alt="^" /> */}
                               </span>
                             }
@@ -99,6 +112,7 @@ const BasicTable = ({
                               (
                                 <>
                                   {column.render('Header')}
+                                  <div>{column.canFilter ? column.render('Filter') : null}</div>
                                   {/* <img src={sort} className="ml-2" alt="^" /> */}
                                 </>
                               )
@@ -123,11 +137,11 @@ const BasicTable = ({
                     return (
                       <>
                         {itemsCenter.includes(cell.column.Header) ? (
-                          <td {...cell.getCellProps()} className='text-center table-data-row'>
+                          <td {...cell.getCellProps()} className='text-center table-data-row middle'>
                             {cell.render('Cell')}
                           </td>
                         ) : (
-                          <td {...cell.getCellProps()} className='fs-12 table-data-row'>
+                          <td {...cell.getCellProps()} className='fs-12 table-data-row middle'>
                             {cell.render('Cell')}
                           </td>
                         )}
