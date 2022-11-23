@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRowSelect, useTable  , useFilters} from 'react-table';
 import Checkbox from './Checkbox';
+import { CSVLink } from "react-csv";
 
 //importing custum components
 import './Table.css'
@@ -58,26 +59,32 @@ const BasicTable = ({
     rows,
     prepareRow,
     selectedFlatRows,
-    // eslint-disable-next-line
-    state: { selectedRowIds }
   } = tableInstance;
 
-  var exportData = [];
+  var exportCsv = [];
   // eslint-disable-next-line
   const checkboxData = JSON.stringify(
     {
-      selectedFlatRows: selectedFlatRows.forEach((row) => {
-       console.log('[ selectedFlatRows ] >', selectedFlatRows)
-      }),
+        selectedFlatRows: selectedFlatRows.forEach((row) => {
+            let data = Object.assign({}, row.original);
+            console.log(data);
+            delete data._sheet;
+            delete data._rowNumber;
+            delete data._rawData;
+            delete data.id;
+            exportCsv.push(data)
+        })
     },
     null,
     2
-  );
-
+);
+console.log(checkboxData)
 
   return (
     <>
       <div className='table-responsive p-0 p-sm-2 mt-1'>
+        <div></div>
+        <button className='btn btn-outline-success'> <CSVLink className="dropdown-item" style={{ fontWeight: 'bold' }} data={exportCsv}>Export</CSVLink>  </button>
         <table {...getTableProps()} className='myTable table'>
           <thead>
             {headerGroups.map((headerGroup) => {
@@ -146,10 +153,7 @@ const BasicTable = ({
             })}
           </tbody>
         </table>
-        {/* {
-          props.pagination &&
-          < Pagination  {...props} />
-        } */}
+    
       </div>
     </>
   )
