@@ -62,25 +62,18 @@ const BasicTable = ({
     state: { selectedRowIds }
   } = tableInstance;
 
-//   var exportData = [];
-//   // eslint-disable-next-line
-//   const checkboxData = JSON.stringify(
-//     {
-//       selectedFlatRows: selectedFlatRows.forEach((row) => {
-//         if (location.pathname === "/admin/inventory-table") {
-//           let data = Object.assign({}, row.original);
-//           exportData.push(data.item.item_id);
-//         }
-//       }),
-//     },
-//     null,
-//     2
-//   );
+  var exportData = [];
+  // eslint-disable-next-line
+  const checkboxData = JSON.stringify(
+    {
+      selectedFlatRows: selectedFlatRows.forEach((row) => {
+       console.log('[ selectedFlatRows ] >', selectedFlatRows)
+      }),
+    },
+    null,
+    2
+  );
 
-//   React.useEffect(() => {
-//     dispatch(productSelected(exportData))
-//     // eslint-disable-next-line
-//   }, [selectedFlatRows])
 
   return (
     <>
