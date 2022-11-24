@@ -94,7 +94,7 @@ const VendorForm = () => {
 
   return (
     <div className="container-fluid h-100">
-      <div className="text-center h1 py-4 fw-semibold">Vendors Data Form</div>
+      <div className="text-center h2 py-4 fw-semibold">Vendors Data Form</div>
       <div className="center-xy">
         <div className="container box-shadow-2 border-none card">
           <div>
@@ -118,7 +118,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="email"
                           />
                           <ErrorMessage component={TextError} name="email" />
@@ -133,7 +133,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="companyName"
                           />
                           <ErrorMessage
@@ -151,7 +151,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="location"
                           />
                           <ErrorMessage component={TextError} name="location" />
@@ -166,7 +166,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="address"
                           />
                           <ErrorMessage component={TextError} name="address" />
@@ -181,7 +181,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="contactPersonName"
                           />
                           <ErrorMessage
@@ -204,7 +204,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="contactNumber"
                           />
                           <ErrorMessage
@@ -222,7 +222,7 @@ const VendorForm = () => {
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
                             as='select'
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="vendorListCategory"
                           
                             >
@@ -245,7 +245,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="websiteUrl"
                           />
                           <ErrorMessage
@@ -263,7 +263,7 @@ const VendorForm = () => {
                           <Field
                             className="form-control border-0 border-bottom rounded-0"
                             id=""
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="linkdinUrl"
                           />
                           <ErrorMessage
@@ -283,7 +283,7 @@ const VendorForm = () => {
                             id=""
                             innerRef={fileRef}
                             multiple
-                            placeholder="Name"
+                            placeholder="Enter"
                             name="uploadPhotoUrl"
                             type="file"
                           />

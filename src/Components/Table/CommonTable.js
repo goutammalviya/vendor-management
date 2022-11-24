@@ -94,7 +94,7 @@ console.log(checkboxData)
                     {headerGroup.headers.map((column) => (
                       <>
                         {headingCenter.includes(column.Header) ? (
-                          <th  style={{borderRadius: "10px !important" , color: "blue"}} className=' text-center table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important" , color: "blue"}} className=' text-center table-heading fs-5' {...column.getHeaderProps()}>
                            
                          
                             {(column.id !== "selection") ?
@@ -107,7 +107,7 @@ console.log(checkboxData)
                             }
                           </th>
                         ) : (
-                          <th  style={{borderRadius: "10px !important", color: "blue"}} className='table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important", color: "blue"}} className='table-heading fs-5' {...column.getHeaderProps()}>
                             {(column.id !== "selection") ?
                               (
                                 <>

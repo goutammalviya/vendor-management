@@ -1,16 +1,12 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #c9e9f6 !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 :root {
   --primary: #800080;
@@ -24,8 +20,11 @@ code {
   --white: #ffffff;
   --blue: #1650d3;
   --black: #000000;
+
 }
-/* // loader css */
+
+
+/* /:/ loader css */
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
@@ -51,48 +50,49 @@ code {
   }
 }
 
-.center-xy{
+.center-xy {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.center-x{
+.center-x {
   display: flex;
   align-items: center;
 }
-.center-y{
+.center-y {
   display: flex;
   justify-content: center;
 }
-.box-shadow{
+.box-shadow {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.box-shadow-light{
+.box-shadow-light {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.box-shadow-2{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+.box-shadow-2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.border-none{
-  border: 0px !important
+.border-none {
+  border: 0px !important;
 }
-.br-50{
+.br-50 {
   border-radius: 50%;
 }
 .bg-light-grey {
-	background-color: #f6f6f6 !important;
+  background-color: #f6f6f6 !important;
 }
 
 .bg-light-green {
-	background-color: #eef2e7 !important;
+  background-color: #eef2e7 !important;
 }
 
 .bg-light-blue {
-	background-color: #c2d7ec;
+  background-color: #c2d7ec;
 }
 
 .bg-light-red {
-	background-color: #fee9e9;
+  background-color: #fee9e9;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -100,11 +100,20 @@ code {
 .middle {
   vertical-align: middle !important;
 }
-.form-check{
+.form-check {
   align-items: center;
 }
-.form-check-input{
+.form-check-input {
   height: 18px !important;
   width: 18px !important;
-
 }
+
+.navbar-bg {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+

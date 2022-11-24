@@ -6,7 +6,7 @@ export const ColumnFilter = ({ column }) => {
     <span>
     <div className="" style={{}}>
     <input
-      style={{border: "1px solid grey" , borderRadius: "3px" , maxWidth: "5rem" , maxHeight: "20px"}}
+      style={{border: "0" , borderRadius: "3px" , maxWidth: "7.3rem" , maxHeight: "25px"}}
         value={filterValue || ''}
         placeholder="Search.."
         onChange={e => setFilter(e.target.value)}
