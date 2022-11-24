@@ -103,3 +103,8 @@ code {
 .form-check{
   align-items: center;
 }
+.form-check-input{
+  height: 18px !important;
+  width: 18px !important;
+
+}

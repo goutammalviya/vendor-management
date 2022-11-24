@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef(
 			<>
 				<div class='form-check d-flex justify-content-center'>
 					<br />
-					<input className='form-check-input border border-3' type='checkbox' value='' id='flexCheckChecked' ref={resolvedRef} {...rest} />
+					<input  className='form-check-input border border-3' type='checkbox' value='' id='flexCheckChecked' ref={resolvedRef} {...rest} />
 				</div>
 			</>
 		)
