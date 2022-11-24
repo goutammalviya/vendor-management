@@ -15,7 +15,7 @@ export default function useDriveService() {
           JSON.stringify({
             name: file.name,
             mimeType: file.type,
-            parents: ["1bTniD9BKHkhRyDBQaKt0cQygnpBptguj"],
+            parents: ["1hTJpIbx5OJmfKZixafrOBTosnuOIjNF9"],
           }),
         ],
         { type: "application/json" }
