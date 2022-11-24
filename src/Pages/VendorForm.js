@@ -4,13 +4,15 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import TextError from "../Components/Formik/TextError";
 import sheetService, { getSheetRows, addRow } from "../Services/SheetService2";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Components/loader/Loader";
 import useDrive from "../Services/driveService";
 import { v4 as uuidv4 } from 'uuid';
 import { usePostVendorFormMutation } from "../Services/dataServices";
+import Swal from "sweetalert2";
 
 const VendorForm = () => {
   const [postVendorForm , {isLoading}] = usePostVendorFormMutation()
-  
+  const [loading,setLoading] = useState(false);
   let sheet = null;
   const {UploadFiles} = useDrive();
   const fileRef = useRef();
@@ -38,7 +40,8 @@ const VendorForm = () => {
     linkdinUrl: "",
     uploadPhotoUrl: "",
   };
-  const handleSubmit = async values => {
+  const handleSubmit = async (values,{ resetForm }) => {
+    setLoading(true);
     const files = fileRef.current.files;
     let fileArr = Object.keys(files).map(f=>files[f]);
   const fileDriveRes =  await UploadFiles(fileArr);
@@ -70,14 +73,13 @@ const VendorForm = () => {
     data.id = uuidv4();
     console.log(await addRow(sheet, data));
   }
-   
-    try {
-      const response = await postVendorForm("").unwrap();
-    } catch (error) {
-      console.log(error);
-    }
-
-    // navigate("/vendors");
+    setLoading(false);
+    Swal.fire(
+      'Success!',
+      'Vendor Added Successfully!',
+      'success'
+    )
+resetForm();
   };
   const validationSchema = Yup.object({
     // email: Yup.string().required("Required*"),
@@ -94,6 +96,7 @@ const VendorForm = () => {
 
   return (
     <div className="container-fluid h-100">
+       {loading && <Loader />}
       <div className="text-center h2 py-4 fw-semibold">Vendors Data Form</div>
       <div className="center-xy">
         <div className="container box-shadow-2 border-none card">

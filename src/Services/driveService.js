@@ -37,7 +37,6 @@ export default function useDriveService() {
     if (!token) {
       await authorize();
     }
-    alert(newFiles.length);
     let uploadRes = await Promise.all(newFiles.map(upload));
     console.log(uploadRes);
     let shareFilesRes = await shareFiles(uploadRes);
