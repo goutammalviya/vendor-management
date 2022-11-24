@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GOOGLE from "./google.json";
+import GOOGLE from "../cred/google.json";
 import useScript from "./useScript";
 import useIsMounted from "./useIsMounted";
 
