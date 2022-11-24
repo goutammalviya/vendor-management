@@ -65,8 +65,8 @@ input[type='radio'] {
 
 .table thead th {
 	vertical-align: middle !important;
-	background-color: #FAF4D5 !important;
-	
+	background-color: #c9e9f6 !important;
+	color: black !important;
 	/* border-bottom: 2px solid #dee2e6; */
 }
 .table>thead{
