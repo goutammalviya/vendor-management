@@ -91,7 +91,19 @@ const SuggestedVendorTable = () => {
     {
       Header: "projects",
       accessor: "project name",
-       Filter: ColumnFilter
+       Filter: ColumnFilter,
+       Cell: ({row: {original}}) => {
+        return (
+          <div>
+           {original['project name'].split(",").map((item,index)=>{
+            return (
+              <div key={index}>{item}</div>
+            )
+           })}
+          </div>
+        )
+       }
+
     },
     {
       Header: "vendor list category",

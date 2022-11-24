@@ -87,7 +87,7 @@ const BasicTable = ({
                     {headerGroup.headers.map((column) => (
                       <>
                         {headingCenter.includes(column.Header) ? (
-                          <th  style={{borderRadius: "10px !important"}} className=' text-center table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important" , color: "blue"}} className=' text-center table-heading' {...column.getHeaderProps()}>
                            
                          
                             {(column.id !== "selection") ?
@@ -100,7 +100,7 @@ const BasicTable = ({
                             }
                           </th>
                         ) : (
-                          <th  style={{borderRadius: "10px !important"}} className='table-heading' {...column.getHeaderProps()}>
+                          <th  style={{borderRadius: "10px !important", color: "blue"}} className='table-heading' {...column.getHeaderProps()}>
                             {(column.id !== "selection") ?
                               (
                                 <>
