@@ -45,8 +45,8 @@ export const VendorsColumns = [
         accessor: 'website url'
     },
     {
-        Header: 'CRUD',
-        accessor: 'CRUD',
+        Header: 'Action',
+        accessor: 'Action',
         Cell: ({ row: { original } }) => {
             console.log(original);
 			return (

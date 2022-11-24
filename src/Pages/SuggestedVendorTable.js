@@ -54,8 +54,8 @@ const SuggestedVendorTable = () => {
   };
   const columns = useMemo(() => [
     {
-      Header: "CRUD",
-      accessor: "CRUD",
+      Header: "Action",
+      accessor: "Action",
        Filter: "",
       Cell: ({ row: { original } }) => {
         return (
@@ -93,13 +93,13 @@ const SuggestedVendorTable = () => {
       }
     },
     {
-      Header: "projects",
+      Header: "Projects",
       accessor: "project name",
        Filter: ColumnFilter,
        Cell: ({row: {original}}) => {
         return (
           <div>
-           {original['project name'].split(",").map((item,index)=>{
+           {original['project name']?.split(",").map((item,index)=>{
             return (
               <div key={index}>{item}</div>
             )
@@ -110,52 +110,52 @@ const SuggestedVendorTable = () => {
 
     },
     {
-      Header: "vendor list category",
+      Header: "Vendor List Category",
       accessor: "vendor list category",
        Filter: ColumnFilter
     },
     {
-      Header: "company name",
+      Header: "Company Name",
       accessor: "company name",
        Filter: ColumnFilter
     },
     {
-      Header: "address",
+      Header: "Address",
       accessor: "address",
        Filter: ColumnFilter
     },
     {
-      Header: "location",
+      Header: "Location",
       accessor: "location",
        Filter: ColumnFilter
     },
     {
-      Header: "contact no",
+      Header: "Contact No",
       accessor: "contact no",
        Filter: ColumnFilter
     },
     {
-      Header: "contact person name",
+      Header: "Contact Person Name",
       accessor: "contact person name",
        Filter: ColumnFilter
     },
     {
-      Header: "email",
+      Header: "Email",
       accessor: "email",
        Filter: ColumnFilter
     },
     {
-      Header: "linkedIn url",
+      Header: "LinkedIn Url",
       accessor: "linkedIn url",
        Filter: ColumnFilter
     },
     {
-      Header: "profile name",
+      Header: "Profile Name",
       accessor: "profile name",
        Filter: ColumnFilter
     },
     {
-      Header: "website url",
+      Header: "Website Url",
       accessor: "website url",
        Filter: ColumnFilter
     },

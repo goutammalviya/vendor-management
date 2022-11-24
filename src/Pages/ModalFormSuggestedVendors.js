@@ -78,15 +78,15 @@ const ModalForm = props => {
     setRenderModal(false);
   };
   const validationSchema = Yup.object({
-    email: Yup.string().required("Required*"),
-    companyName: Yup.string().required("Required*"),
-    location: Yup.string().required("Required*"),
-    address: Yup.string().required("Required*"),
-    contactPersonName: Yup.string().required("Required*"),
-    contactNumber: Yup.string().required("Required*"),
+    // email: Yup.string().required("Required*"),
+    // companyName: Yup.string().required("Required*"),
+    // location: Yup.string().required("Required*"),
+    // address: Yup.string().required("Required*"),
+    // contactPersonName: Yup.string().required("Required*"),
+    // contactNumber: Yup.string().required("Required*"),
     vendorListCategory: Yup.string().required("Required*"),
-    websiteUrl: Yup.string().required("Required*"),
-    linkdinUrl: Yup.string().required("Required*"),
+    // websiteUrl: Yup.string().required("Required*"),
+    // linkdinUrl: Yup.string().required("Required*"),
     checkBox: Yup.boolean(),
   });
   console.log(data);
@@ -146,7 +146,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              Company name
+                              Company Name
                             </label>
                             <Field
                               className="form-control border-0 border-bottom rounded-0"
@@ -200,7 +200,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              Contact person name
+                              Contact Person Name
                             </label>
                             <Field
                               className="form-control border-0 border-bottom rounded-0"
@@ -217,7 +217,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              project names
+                              Project Names
                             </label>
                             <Field
                               disabled
@@ -241,7 +241,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              Contact number
+                              Contact Number
                             </label>
                             <Field
                               className="form-control border-0 border-bottom rounded-0"
@@ -261,7 +261,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              Vendor list category
+                              Vendor List Category
                             </label>
                             <Field
                             className="form-control border-0 border-bottom rounded-0"
@@ -272,7 +272,7 @@ const ModalForm = props => {
                           
                             >
                               {" "}
-                              <option value="">select vendor category</option>
+                              <option value="">Select Vendor Category</option>
                               {projectCategoryList.filter(v=>v["vendor list category"]).map((project) => {let projectName = project["vendor list category"]; return(<option value={projectName}>{projectName}</option>)})}
                             </Field>
                             <ErrorMessage
@@ -321,7 +321,7 @@ const ModalForm = props => {
                             <label
                               htmlFor=" required"
                               className="fs-5 ff-montserrat">
-                              add another project
+                              Add New Project
                             </label>
                             <Field
                               as="select"
@@ -330,7 +330,7 @@ const ModalForm = props => {
                               placeholder="Enter"
                               name="addAnotherProject">
                               {" "}
-                              <option value="">select project name</option>
+                              <option value="">Select Project Name</option>
                               {projectList.map((project) => {let projectName = project["project name"]; return(<option value={projectName}>{projectName}</option>)})}
                             </Field>
                             <ErrorMessage

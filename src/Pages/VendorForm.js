@@ -57,6 +57,7 @@ const VendorForm = () => {
       "profile name": values.uploadPhotoUrl,
     };
     console.log(fileDriveRes);
+    if(fileDriveRes.length>0){
     fileDriveRes.forEach(async (r) => {
         
       data["profile url"] = r.url;
@@ -65,6 +66,10 @@ const VendorForm = () => {
       console.log(data);
       console.log(await addRow(sheet, data));
     });
+  }else{
+    data.id = uuidv4();
+    console.log(await addRow(sheet, data));
+  }
    
     try {
       const response = await postVendorForm("").unwrap();
@@ -75,16 +80,16 @@ const VendorForm = () => {
     // navigate("/vendors");
   };
   const validationSchema = Yup.object({
-    email: Yup.string().required("Required*"),
-    companyName: Yup.string().required("Required*"),
-    location: Yup.string().required("Required*"),
-    address: Yup.string().required("Required*"),
-    contactPersonName: Yup.string().required("Required*"),
-    contactNumber: Yup.string().required("Required*"),
+    // email: Yup.string().required("Required*"),
+    // companyName: Yup.string().required("Required*"),
+    // location: Yup.string().required("Required*"),
+    // address: Yup.string().required("Required*"),
+    // contactPersonName: Yup.string().required("Required*"),
+    // contactNumber: Yup.string().required("Required*"),
     vendorListCategory: Yup.string().required("Required*"),
-    websiteUrl: Yup.string().required("Required*"),
-    linkdinUrl: Yup.string().required("Required*"),
-    uploadPhotoUrl: Yup.string().required("Required*"),
+    // websiteUrl: Yup.string().required("Required*"),
+    // linkdinUrl: Yup.string().required("Required*"),
+    // uploadPhotoUrl: Yup.string().required("Required*"),
   });
 
   return (
