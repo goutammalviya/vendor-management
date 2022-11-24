@@ -20,10 +20,10 @@ const Navbar = () => {
                 Add Vendor
               </NavLink>
               <NavLink className="nav-item nav-link " to="/vendor">
-                Vendors List
+                Vendors
               </NavLink>
               <NavLink className="nav-item nav-link " to="/suggested_vendors">
-                suggested vendors
+                Suggested Vendors
               </NavLink>
             </div>
           </div>

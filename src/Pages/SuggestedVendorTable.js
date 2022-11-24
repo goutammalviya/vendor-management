@@ -173,7 +173,7 @@ const SuggestedVendorTable = () => {
       {loading2 && <Loader />}
 
       <div className="text-center">
-        <div className="h2 fw-semibold pt-3">Vendors List</div>
+        <div className="h2 fw-semibold pt-3">Suggested Vendors List</div>
       </div>
       <div className="card border-0 p-2 m-2 m-md-4 box-shadow">
         {renderModal && (
