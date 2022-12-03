@@ -60,12 +60,12 @@ input[type='radio'] {
 .myTable {
 	border-collapse: separate !important;
 
-	border-spacing: 0 12px !important;
+	border-spacing: 0 1px !important;
 }
 
 .table thead th {
 	vertical-align: middle !important;
-	background-color: #c9e9f6 !important;
+	background-color: white !important;
 	color: black !important;
 	/* border-bottom: 2px solid #dee2e6; */
 }
@@ -90,16 +90,16 @@ input[type='radio'] {
 .myTable td:first-child {
 	/* padding-left: 20px; */
 	/* border-left: 1px solid #bcc7a9 !important; */
-	border-top-left-radius: 8px;
-	border-bottom-left-radius: 8px;
+	border-top-left-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
 }
 
 /* .myTable th:last-child  */
 .myTable td:last-child {
 	margin-bottom: 10px;
 
-	border-top-right-radius: 8px;
-	border-bottom-right-radius: 8px;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
 	/* border-right: 1px solid #bcc7a9 !important; */
 }
 

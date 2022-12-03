@@ -93,67 +93,68 @@ const VendorTable = () => {
       }
     },
     {
-      Header: "Vendor List Category",
-      accessor: "vendor list category",
+      Header: "Project",
+      accessor: "project_name",
       Filter: ColumnFilter
     },
     {
-      Header: "Company Name",
-      accessor: "company name",
+      Header: "Drawings",
+      accessor: "drawing",
        Filter: ColumnFilter
 
     },
     {
-      Header: "Address",
-      accessor: "address",
+      Header: "Transmittled",
+      accessor: "transmittled",
        Filter: ColumnFilter
 
     },
     {
-      Header: "Location",
-      accessor: "location",
+      Header: "dummy",
+      accessor: "dummy",
        Filter: ColumnFilter
 
     },
-    {
-      Header: "Contact No",
-      accessor: "contact no",
-       Filter: ColumnFilter
-
-    },
-    {
-      Header: "Contact Person Name",
-      accessor: "contact person name",
-       Filter: ColumnFilter
-
-    },
-    {
-      Header: "Email",
-      accessor: "email",
-       Filter: ColumnFilter
-
-    },
-    {
-      Header: "LinkedIn Url",
-      accessor: "linkedIn url",
-       Filter: ColumnFilter
-
-    },
-    {
-      Header: "Profile Name",
-      accessor: "profile name",
-       Filter: ColumnFilter
-
-    },
-    {
-      Header: "Website Url",
-      accessor: "website url",
-       Filter: ColumnFilter
-
-    },
+ 
     
    
   ]);
+
+ const  data = [
+    {
+      project_name: "dummy",
+      drawing: "dummy",
+      transmittled: "dummy",
+      dummy: "dummy"
+    },
+    {
+      project_name: "dummy",
+      drawing: "dummy",
+      transmittled: "dummy",
+      dummy: "dummy"
+    },
+    {
+      project_name: "dummy",
+      drawing: "dummy",
+      transmittled: "dummy",
+      dummy: "dummy"
+    },
+    {
+      project_name: "dummy",
+      drawing: "dummy",
+      transmittled: "dummy",
+      dummy: "dummy"
+    },
+    {
+      project_name: "dummy",
+      drawing: "dummy",
+      transmittled: "dummy",
+      dummy: "dummy"
+    },
+  ]
+
+  
+
   console.log(vendors);
   if (loading) {
     return (
@@ -169,13 +170,13 @@ const VendorTable = () => {
       <div className="text-center">
         <div className="h2 pt-3 fw-semibold">Vendors List</div>
       </div>
-      <div className="card border-0 p-2 m-2 m-md-4 box-shadow">
+      <div style={{background:"#1a1c28"}} className="card border-0 p-2 m-2 m-md-4 box-shadow">
 
        {renderModal && <ModalForm setRenderModal={setRenderModal} reFetchData={reFetchData} data={row} modalId={`rowmodal`} /> }
         <BasicTable
           headingCenter={[]}
           itemsCenter={[]}
-          data={vendors}
+          data={data}
           columns={columns}
         />
       </div>

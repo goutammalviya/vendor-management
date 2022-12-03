@@ -4,7 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #c9e9f6 !important;
+  background-color: #242a38 !important;
 }
 
 
@@ -117,3 +117,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+  color: rgba(173, 173, 173, 0.9) !important;
+}

@@ -17,8 +17,8 @@ const Layout = () => {
       <Navbar/>
       <Routes>
         <Route path="/vendor" element={<VendorTable />} />
-        <Route path="/suggested_vendors" element={<SuggestedVendorTable />} />
-        <Route path="/" element={<VendorForm />} />
+        {/* <Route path="/suggested_vendors" element={<SuggestedVendorTable />} /> */}
+        {/* <Route path="/" element={<VendorForm />} /> */}
         <Route path="*" element={<UnknownURL />} />
       </Routes>
     </div>

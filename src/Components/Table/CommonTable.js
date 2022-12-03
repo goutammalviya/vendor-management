@@ -82,9 +82,9 @@ console.log(checkboxData)
 
   return (
     <>
-      <div className='table-responsive p-0 p-sm-2 mt-1'>
+      <div className='table-responsive  p-0 p-sm-2 mt-1'>
         <div></div>
-        <button className='btn btn-success'> <CSVLink className="dropdown-item" style={{ fontWeight: 'bold' }} data={exportCsv}>Export</CSVLink>  </button>
+        <button className='btn btn-success my-2'> <CSVLink className="dropdown-item" style={{ fontWeight: 'bold' }} data={exportCsv}>Export</CSVLink>  </button>
         <table {...getTableProps()} className='myTable table'>
           <thead>
             {headerGroups.map((headerGroup) => {
@@ -128,7 +128,7 @@ console.log(checkboxData)
               );
             })}
           </thead>
-          <tbody {...getTableBodyProps()}>
+          <tbody style={{background: "white"}} {...getTableBodyProps()}>
             {rows.map((row) => {
               prepareRow(row);
               return (
