@@ -84,10 +84,10 @@ const ModalForm = (props) => {
           class="modal-dialog"
           style={{ maxWidth: "inherit", margin: "50px" }}
         >
-          <div class="modal-content">
+          <div class="modal-content bgg-primary">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">
-              Update Vendor
+              <h5 class="modal-title fc-white" id="staticBackdropLabel">
+              Update Drawing
               </h5>
               <button
                 type="button"
@@ -112,30 +112,30 @@ const ModalForm = (props) => {
                           <div className="py-2">
                             <label
                               htmlFor=" required"
-                              className="fs-5 ff-montserrat"
+                              className="fs-5 fc-white ff-montserrat"
                             >
-                              Email
+                              Project Name
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
+                              className="form-control br-none br-6 border-bottom"
                               id=""
-                              placeholder="Enter"
-                              name="email"
+                              placeholder="Project Name"
+                              name="project"
                             />
-                            <ErrorMessage component={TextError} name="email" />
+                            <ErrorMessage component={TextError} name="project" />
                           </div>
 
                           <div className="py-2">
                             <label
                               htmlFor=" required"
-                              className="fs-5 ff-montserrat"
+                              className="fs-5 fc-white ff-montserrat"
                             >
-                              Company Name
+                              Date
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
+                              className="form-control br-none br-6 border-bottom"
                               id=""
-                              placeholder="Enter"
+                              type="date"
                               name="companyName"
                             />
                             <ErrorMessage
@@ -147,101 +147,23 @@ const ModalForm = (props) => {
                           <div className="py-2">
                             <label
                               htmlFor=" required"
-                              className="fs-5 ff-montserrat"
+                              className="fs-5 fc-white ff-montserrat"
                             >
-                              Location
+                              Select Drawing
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="location"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="location"
-                            />
-                          </div>
-
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat"
-                            >
-                              Address
-                            </label>
-                            <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="address"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="address"
-                            />
-                          </div>
-
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat"
-                            >
-                              Contact Person Name
-                            </label>
-                            <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="contactPersonName"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="contactPersonName"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-6">
-                      <div className="row">
-                        <div className="col-12">
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat"
-                            >
-                              Contact Number
-                            </label>
-                            <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="contactNumber"
-                            />
-                            <ErrorMessage
-                              component={TextError}
-                              name="contactNumber"
-                            />
-                          </div>
-                          <div className="py-2">
-                            <label
-                              htmlFor=" required"
-                              className="fs-5 ff-montserrat"
-                            >
-                              Vendor List Category
-                            </label>
-                            <Field
-                            className="form-control border-0 border-bottom rounded-0"
+                            className="form-control br-none br-6 border-bottom"
                             id=""
                             as='select'
-                            placeholder="Name"
+                            placeholder="select drawing"
                             name="vendorListCategory"
                           
                             >
                               {" "}
-                              <option value="">Select Vendor Category</option>
-                              {projectCategoryList.filter(v=>v["vendor list category"]).map((project) => {let projectName = project["vendor list category"]; return(<option value={projectName}>{projectName}</option>)})}
+                              <option value="">Select Drawing</option>
+                             <option value={""}>dummy</option>
+                             <option value={""}>dummy</option>
+                             <option value={""}>dummy</option>
                             </Field>
                             <ErrorMessage
                               component={TextError}
@@ -252,71 +174,116 @@ const ModalForm = (props) => {
                           <div className="py-2">
                             <label
                               htmlFor=" required"
-                              className="fs-5 ff-montserrat"
+                              className="fs-5 fc-white ff-montserrat"
                             >
-                              Website Url
+                              Revision
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="websiteUrl"
-                            />
+                            className="form-control br-none br-6 border-bottom"
+                            id=""
+                            as='select'
+                            placeholder="select revision"
+                            name="vendorListCategory"
+                          
+                            >
+                              {" "}
+                              <option value="">Select Revision</option>
+                             <option value={""}>dummy</option>
+                             <option value={""}>dummy</option>
+                             <option value={""}>dummy</option>
+                            </Field>
                             <ErrorMessage
                               component={TextError}
-                              name="websiteUrl"
+                              name="vendorListCategory"
                             />
                           </div>
 
                           <div className="py-2">
                             <label
                               htmlFor=" required"
-                              className="fs-5 ff-montserrat"
+                              className="fs-5 fc-white ff-montserrat"
                             >
-                              Linkdin Url
+                              Select (kdos)
                             </label>
                             <Field
-                              className="form-control border-0 border-bottom rounded-0"
-                              id=""
-                              placeholder="Enter"
-                              name="linkdinUrl"
-                            />
+                            className="form-control br-none br-6 border-bottom"
+                            id=""
+                            as='select'
+                            placeholder="select revision"
+                            name="vendorListCategory"
+                          
+                            >
+                              {" "}
+                              <option value="">Select..</option>
+                             <option value={""}>Email</option>
+                             <option value={""}>advance copy</option>
+                             <option value={""}>reissue</option>
+                             <option value={""}>print</option>
+                            </Field>
                             <ErrorMessage
                               component={TextError}
-                              name="linkdinUrl"
-                            />
-                          </div>
-
-                          <div className="py-2">
-                            <Field
-                              type="checkbox"
-                              className=""
-                              name="checkBox"
-                            />{" "}
-                            <span className="px-1">
-                              <label
-                                htmlFor=" required"
-                                className="fs-5 ff-montserrat"
-                              >
-                                Add to Suggested
-                              </label>
-                            </span>
-                            <ErrorMessage
-                              component={TextError}
-                              name="checkBox"
+                              name="vendorListCategory"
                             />
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div className="col-12 col-md-6">
+                      <div className="row">
+                        <div className="col-12">
+                          
+
+                          <div className="py-2">
+                            <label
+                              htmlFor=" required"
+                              className="fs-5 fc-white ff-montserrat"
+                            >
+                              Upload drawing
+                            </label>
+                            <Field
+                              className="form-control br-none br-6 border-bottom"
+                              id=""
+                              type="file"
+                              placeholder="upload"
+                              name="linkdinUrl"
+                            />
+                            <ErrorMessage
+                              component={TextError}
+                              name="linkdinUrl"
+                            />
+                          </div>
+                          <div className="py-2">
+                            <label
+                              htmlFor=" required"
+                              className="fs-5 fc-white ff-montserrat"
+                            >
+                              Upload checklist
+                            </label>
+                            <Field
+                              className="form-control br-none br-6 border-bottom"
+                              id=""
+                              type="file"
+                              placeholder="upload"
+                              name="linkdinUrl"
+                            />
+                            <ErrorMessage
+                              component={TextError}
+                              name="linkdinUrl"
+                            />
+                          </div>
+
+                      
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="button text-center py-3">
+                  <div className="button text-center py-3 mt-3">
                     <div class="modal-footer d-flex justify-content-around">
                       <button
                         type="button"
                         id="closeModal"
-                        class="btn btn-lg btn-danger rounded-0 d-none fw-normal ff-montserrat px-5 py-2"
+                        class="btn btn-lg btn-danger d-none fw-normal ff-montserrat px-5 py-2"
                         data-bs-dismiss="modal"
                       >
                         Close
@@ -324,7 +291,7 @@ const ModalForm = (props) => {
 
                       <button
                         type="submit"
-                        className="btn btn-lg btn-primary rounded-0 fw-normal ff-montserrat px-5 py-2"
+                        className="btn btn-lg btn-primary fw-normal ff-montserrat px-5 py-2"
                       >
                         Submit
                       </button>

@@ -67,7 +67,7 @@ const VendorTable = () => {
                 <AiOutlineDelete />
               </div>
             </span>
-            <span className="center-xy px-1">
+            {/* <span className="center-xy px-1">
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
                 <AiOutlineEdit  onClick={()=>{ setRow(original); setRenderModal(true); setTimeout(() => {
                   document.getElementById('modal-btn-click').click();
@@ -82,7 +82,7 @@ const VendorTable = () => {
                    >
                 </button>
               </div>
-            </span>
+            </span> */}
             <span className="center-xy" >
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
                 <AiOutlineFolderView />
@@ -99,8 +99,26 @@ const VendorTable = () => {
     },
     {
       Header: "Drawings",
-      accessor: "drawing",
-       Filter: ColumnFilter
+      accessor: "Drawings",
+       Filter: ColumnFilter,
+       Cell: ({row: { original }}) => {
+      return (  <span className="d-flex px-1">
+      <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
+        <AiOutlineEdit  onClick={()=>{ setRow(original); setRenderModal(true); setTimeout(() => {
+          document.getElementById('modal-btn-click').click();
+        }, (100));}}
+      />
+        <button
+          type="button"
+          data-bs-toggle="modal"
+          style={{display: "none"}}
+          data-bs-target="#rowmodal"
+          id='modal-btn-click'
+           >
+        </button>
+      </div>
+    </span>)
+       }
 
     },
     {
@@ -168,8 +186,9 @@ const VendorTable = () => {
       {loading2 && <Loader />}
 
       <div className="text-center">
-        <div className="h2 pt-3 fw-semibold">Vendors List</div>
+        <div className="h2 pt-3 fc-white fw-semibold">Vendors List</div>
       </div>
+
       <div style={{background:"#1a1c28"}} className="card border-0 p-2 m-2 m-md-4 box-shadow">
 
        {renderModal && <ModalForm setRenderModal={setRenderModal} reFetchData={reFetchData} data={row} modalId={`rowmodal`} /> }

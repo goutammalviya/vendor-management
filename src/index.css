@@ -22,8 +22,27 @@ body {
   --black: #000000;
 
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;
+  opacity: 1; /* Firefox */
+}
 
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white !important;
+}
 
+::-ms-input-placeholder { 
+  color: white !important;;
+}
+.fc-white {
+  color: white !important;
+}
+.bgg-primary {
+  background-color: rgb(26, 28, 40) !important;
+}
+.bgg-secondry {
+  background-color: #242a38 !important;
+}
 /* /:/ loader css */
 .lds-dual-ring {
   display: inline-block;
@@ -40,6 +59,9 @@ body {
   border: 6px solid #000000;
   border-color: #000000 transparent #000000 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
+}
+.br-6 {
+  border-radius: 4px !important;
 }
 @keyframes lds-dual-ring {
   0% {
