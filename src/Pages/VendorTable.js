@@ -186,7 +186,7 @@ const VendorTable = () => {
       {loading2 && <Loader />}
 
       <div className="text-center">
-        <div className="h2 pt-3 fc-white fw-semibold">Vendors List</div>
+        <div className="h2 pt-3 fc-white fw-semibold">Drawing List</div>
       </div>
 
       <div style={{background:"#1a1c28"}} className="card border-0 p-2 m-2 m-md-4 box-shadow">
