@@ -85,7 +85,10 @@ const VendorTable = () => {
             </span>
             <span className="center-xy" >
               <div className="br-50 bg-light-green d-flex p-2 cursor-pointer">
-                <AiOutlineFolderView />
+              <a style={{display:'none'}} id='openUrl2' href={original['profile url']} target='_blank'/>
+                <AiOutlineFolderView onClick={()=>{
+                    document.getElementById("openUrl2").click();
+                }}/>
               </div>
             </span>
           </div>
