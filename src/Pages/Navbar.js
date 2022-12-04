@@ -23,7 +23,7 @@ const Navbar = () => {
                 Dummy Table
               </NavLink>
               <NavLink className="nav-item nav-link " to="/suggested_vendors">
-              <span className="" style={{color: "aliceblue"}}>  suggested vendors</span>
+              {/* <span className="" style={{color: "aliceblue"}}>  suggested vendors</span> */}
               </NavLink>
             </div>
           </div>

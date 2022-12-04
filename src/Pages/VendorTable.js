@@ -115,6 +115,7 @@ const VendorTable = () => {
           data-bs-target="#rowmodal"
           id='modal-btn-click'
            >
+            Upload drawing
         </button>
       </div>
     </span>)
